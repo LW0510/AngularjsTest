@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+</head>
+<body ng-app="myApp">
+<script type="text/javascript">
+
+    // console.log(angular);
+    //创建模块对象    生成作用域对象1、2 链式调用
+    var myModule = angular.module("myApp",[])
+        .controller("MyController",function ($scope) {
+            $scope.empName = "kobe";
+        })
+        .controller("MyController2",function ($scope) {
+            $scope.empName = "kobe";
+        });
+
+</script>
+
+<div ng-controller="MyController">
+    <input type="text" ng-model="empName">
+    <p>员工名字1：{{empName}}</p>
+</div>
+
+<div ng-controller="MyController2">
+    <input type="text" ng-model="empName">
+    <p>员工名字2：{{empName}}</p>
+</div>
+
+
+
+</body>
+</html>

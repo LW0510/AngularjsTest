@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+</head>
+<body ng-app="myApp">
+<script type="text/javascript">
+
+    var myModule = angular.module("myApp", [])
+        .controller("MyController", ["$scope", function (s) {
+            s.number1 = 0;
+            s.prices1 = 0;
+
+            s.number2 = 0;
+            s.prices2 = 0;
+            s.total2 = 0;
+
+            //初始化人员数据
+            s.persons = [
+                {"username":"zs","age":12},
+                {"username":"ls","age":14},
+                {"username":"ww","age":15},
+            ];
+            
+            s.getTotalPrice = function () {
+                s.total2 = s.number2 * s.prices2;
+            }
+        }])
+
+
+</script>
+
+<div ng-controller="MyController">
+    <p><span><b>价格计算器(自动)</b></span></p>
+    <span>数量：<input type="number" ng-model="number1"> 价格：<input type="number" ng-model="prices1"></span>
+    <p><span>总计：{{number1 * prices1}}</span></p>
+</div>
+
+<div ng-controller="MyController">
+    <p><span><b>价格计算器(手动)</b></span></p>
+    <span>数量：<input type="number" ng-model="number2"> 价格：<input type="number" ng-model="prices2"><input type="button" value="计算" ng-click="getTotalPrice()"></span>
+    <p><span>总计：{{total2}}</span></p>
+</div>
+
+
+
+<!--
+    * ng-repeat:  遍历数组显示数据，数组有个元素就会产生几个作用域
+    * $index , $first , $last , $middle , $odd , $even
+-->
+<div>
+    <h2>人员信息列表</h2>
+    <ul>
+        <li></li>
+    </ul>
+
+</div>
+
+</body>
+</html>
