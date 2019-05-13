@@ -51,10 +51,12 @@
     * ng-repeat:  遍历数组显示数据，数组有个元素就会产生几个作用域
     * $index , $first , $last , $middle , $odd , $even
 -->
-<div>
+<div ng-controller="MyController">
     <h2>人员信息列表</h2>
     <ul>
-        <li></li>
+        <li ng-repeat="person in persons">
+            {{$index}}----{{person.username}}------{{person.age}}
+        </li>
     </ul>
 
 </div>
