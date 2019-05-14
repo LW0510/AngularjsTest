@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/test5.js"></script>
+</head>
+<!--数据存储功能的实现-->
+<!--
+#H5本地存储技术
+    * sessionStorage
+        - 生命周期：浏览器打开到关闭的过程
+        - 大小：5M
+        - 保存位置：浏览器端
+        - setItem('key',value)
+        - getItem('key')
+        - remove('key')
+
+    * localStorage（永久存储）
+        - 生命周期：永久，除非认为删除
+        - 大小： 5M甚至更大
+        - 保存位置：浏览器端
+        - setItem('key',value)
+        - getItem('key')
+        - remove('key')
+
+    * cookie
+    作用：用于浏览器和服务器端进行通信的
+    特点：
+        - 大小：4kb
+        - 每次发送请求都携带，导致占用带宽
+        - 保存在浏览器端
+        - cookie容易被截获，不安全
+        -生命周期：
+            - 会话cookie：浏览器打开到关闭的过程
+            - 人为cookie：人为设置时间
+-->
+<body ng-app="MyApp">
+<h2>我的笔记</h2>
+<div ng-controller="MyController">
+    <textarea cols="30" rows="10" ng-model="message"></textarea>
+    <div>
+        <button ng-click="save()">保存</button>
+        <button ng-click="get()">读取</button>
+        <button ng-click="clear()">删除</button>
+    </div>
+    <p>剩余的字数:{{getCount()}}</p>
+</div>
+
+</body>
+</html>
