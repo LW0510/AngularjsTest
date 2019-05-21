@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test4.js"></script>
+    <title>事件参数</title>
+</head>
+<body ng-app="MyApp">
+
+<button id="btn">点我</button>
+<hr>
+<div ng-controller="EventController">
+    <!--调用方法时传入内置时间对象$event-->
+    <button ng-click="show($event)">click me</button>
+</div>
+
+
+
+
+
+</body>
+</html>

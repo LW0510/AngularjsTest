@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--在作用域中定义方法2-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test3.js"></script>
+    <title>Title</title>
+</head>
+<body ng-app="MyApp">
+
+<div ng-controller="FirstController">
+    <button ng-click="show()">click me</button>
+    <br>
+
+    <div ng-controller="SecondController">
+        <button ng-click="show()">click me</button>
+        <!--<h3 ng-bind="$parent.name"></h3>-->
+    </div>
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
