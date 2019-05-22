@@ -7,17 +7,24 @@
     <title>简易计算器</title>
 </head>
 <body ng-app="MyApp">
+<div ng-controller="MyController">
+    <span>操作数1：<input type="number" ng-model="v1"></span>
+    <span>操作数2：<input type="number" ng-model="v2"></span>
+    <!--<input type="button" value="加" ng-click="calc($event)">-->
+    <!--<input type="button" value="减" ng-click="calc($event)">-->
+    <!--<input type="button" value="乘" ng-click="calc($event)">-->
+    <!--<input type="button" value="除" ng-click="calc($event)">-->
 
-<button id="btn">点我</button>
-<hr>
-<div>
-    <span>操作数1：<input type="number"></span>
-    <span>操作数2：<input type="number"></span>
-    <input type="button" value="加">
-    <input type="button" value="减">
-    <input type="button" value="乘">
-    <input type="button" value="除">
-    <h3>运算结果：</h3>
+    <!--普通按钮不能采用以下方式，因为值不能绑定到普通按钮里面-->
+    <input type="radio" value="加" ng-click="calc()" ng-model="flag">
+    <label for="">加</label>
+    <input type="radio" value="减" ng-click="calc()" ng-model="flag">
+    <label for="">减</label>
+    <input type="radio" value="乘" ng-click="calc()" ng-model="flag">
+    <label for="">乘</label>
+    <input type="radio" value="除" ng-click="calc()" ng-model="flag">
+    <label for="">除</label>
+    <h3>运算结果: <span ng-bind="result"></span></h3>
 </div>
 
 

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test6.js"></script>
+    <title>事件传播机制</title>
+</head>
+<body ng-app="MyApp" >
+<img src="../images/event_transfer.png" style="width:400px; height: 200px;">
+
+<div ng-controller="MyController">
+    <button ng-click="doAdd()">按钮</button>
+    count={{count}}
+
+    <div ng-controller="MyController">
+        <button ng-click="doAdd()">按钮2</button>
+        count2={{count}}
+        <br>
+
+        <!--注意：前提条件得他们控制器对象中有这个事件-->
+        <!--触发MyClick事件，并将事件同时提交给父类控制器，父类控制器也要执行该操作-->
+        <button ng-click="$emit('MyClick')">上传emit</button>
+        <!--触发MyClick事件，并将事件同时广播给子类控制器，子类控制器也要执行该操作-->
+        <button ng-click="$broadcast('MyClick')">下传broardcast</button>
+
+        <div ng-controller="MyController">
+            <button ng-click="doAdd()">按钮3</button>
+            count3={{count}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
