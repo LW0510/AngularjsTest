@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <script type="text/javascript" src="../js/angular/angular.js"></script>
-    <script type="text/javascript" src="js/test6.js"></script>
+    <script type="text/javascript" src="js/test7.js"></script>
     <title>事件传播机制</title>
 </head>
 <body ng-app="MyApp" >
 <div ng-controller="MyController">
+    <h3>name={{name}}</h3>      <!--容错，找不到则不显示-->
+
+    <!--<h3>name={{name++}}</h3>-->        <!--不支持自增、自减-->
+    <!--<h3>name={{name&10}}</h3>-->        <!--不支持位运算-->
+
+    <h3>{{age > 18 ?"成年":"未成年"}}</h3>   <!--支持三目运算符-->
+
+    <h3>{{stu.id}},{{stu.name}}</h3>
+
+    <h3>{{hobbies[1]}}</h3>
 
 </div>
 
