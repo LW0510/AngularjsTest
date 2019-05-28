@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test5.js"></script>
+    <title>内置指令：init、bind</title>
+</head>
+<body ng-controller="MyController" ng-cloak>
+    <form name="fm" ng-submit="doSubmit()" novalidate> <!---禁用浏览器验证-->
+        <p ng-repeat="field in fields" ng-form="fm_input">
+            <label for="{{field.id}}">{{field.name}}</label>
+            <input type="{{field.type}}" id="{{field.id}}" name="{{field.name}}" placeholder="{{field.placeholder}}" ng-model="field.value" ng-required="field.isReq">
+            <span ng-show="fm.{{field.name}}.$dirty&&fm.{{field.name}}.$valid" ng-style="{color:'green'}">正确</span>
+            <span ng-show="fm.{{field.name}}.$dirty&&fm.{{field.name}}.$valid" ng-style="{color:'red'}">错误</span>
+        </p>
+        <p>
+            <input type="submit" value="提交" ng-disabled="fm.$invalid">
+            <input type="reset" value="重置">
+        </p>
+
+    </form>
+
+
+</body>
+</html>

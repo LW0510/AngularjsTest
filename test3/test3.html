@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test3.js"></script>
+    <title>显示用户名，并按指定字段排序显示</title>
+</head>
+<body ng-controller="MyController">
+
+
+
+<div>选择需要显示的字段：
+    <select ng-model="s1" ng-options="k as k for (k,v) in users[0]" >
+        <option value="">请选择：</option>
+    </select>
+
+</div>
+<div>选择需要排序的字段：
+    <select ng-model="s2" ng-options="k as k for (k,v) in users[0]">
+        <option value="">请选择：</option>
+
+    </select>
+</div>
+<hr>
+<hr>
+
+<div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>pwd</th>
+        </tr>
+        <tr ng-repeat="u in users|orderBy:s1">
+            <td>{{u.id}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.age}}</td>
+            <td>{{u.pwd}}</td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

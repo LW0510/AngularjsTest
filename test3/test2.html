@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test2.js"></script>
+    <title>内置指令：ng-options</title>
+</head>
+<body ng-controller="MyController">
+
+<!--    简单集合 -->
+<!--注意： select中必须要有一个 ng-model， 实现将选中的option绑定到作用域中，即将选中的option用下面s1存储起来-->
+<select ng-model="s1" ng-options="v for (k,v) in arr">
+    <option value="">请选择：</option>
+</select>
+<h3>{{s1}}</h3>
+<hr>
+
+<!-- k as v 含义：将作为option的value值，将v作为option的text的值-->
+<select ng-model="s2" ng-options="k as v for (k,v) in arr">
+    <option value="">请选择：</option>
+</select>
+<h3>{{s2}}</h3>
+<hr>
+
+<!--复杂集合-->
+<select ng-model="s3" ng-options="u.id as u.name for u in users">
+    <option value="">请选择：</option>
+</select>
+<h3>{{s3}}</h3>
+
+<!--写法2 ; 其中 v 就代表数组中的一个对象，就是上面的 u ,k 没有用到-->
+<!--<select ng-model="s3" ng-options="v.id as v.name for <k,v> in users">-->
+<!--    <option value="">请选择：</option>-->
+<!--</select>-->
+<!--<h3>{{s3}}</h3>-->
+
+
+
+</body>
+</html>

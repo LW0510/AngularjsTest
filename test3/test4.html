@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test3.js"></script>
+    <title>内置指令：init、bind</title>
+</head>
+<body ng-controller="MyController">
+<div ng-init="name='tom';age=21"></div>
+<h3>{{name}}</h3>
+<!--不能绑定多个，需要绑定多个可以用 ng-bind-template -->
+<h3 ng-bind="name"></h3>
+
+<h3 ng-bind-template="name={{name}},age={{age}}"></h3>
+
+<!--AngularJS展示数据时{{}}和ng-bind指令的区别
+    使用{{}}时，如果页面渲染较慢，用户可能会看到未被渲染的内容，导致未渲染的闪烁
+    解决：
+        1. 使用指令ng-bind，推荐
+        2.  使用{{}}结合ng-cloak指令
+-->
+
+</body>
+</html>

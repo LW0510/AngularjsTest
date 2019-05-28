@@ -13,7 +13,7 @@
     <h2>我的备忘录</h2>
     <input type="text" ng-model="newTodo"><button ng-click="add()">新增</button>
     <div ng-repeat="ss in todos">
-        <input type="checkbox" ng-show="s1=true" ng-model="ss.isChecked">
+        <input type="checkbox" ng-show="s1=false" ng-model="ss.isChecked">
         <span>{{ss.name}}</span>
     </div>
 

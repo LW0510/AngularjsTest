@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/test.js"></script>
+    <title>自定义过滤器</title>
+</head>
+<body ng-app="MyApp">
+<!--在页面中过滤-->
+<h2>{{['a','b','c']|reverse}}</h2>
+
+<div ng-controller="MyController">
+    <h2>{{str}}</h2>
+</div>
+
+</body>
+</html>
