@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../js/angular/angular.js"></script>
+    <script src="js/test2.js"></script>
+    <title>自定义指令--作用域隔离级别</title>
+</head>
+<body ng-controller="DirectiveController">
+<!--
+    @,用于字符串
+    在控制器作用域中访问
+-->
+name:<input type="text" ng-model="name"><br>
+age:<input type="text" ng-model="age"><br>
+name={{name}},age={{age}}
+<hr>
+<!--
+    在隔离作用域中访问
+-->
+<div first name="{{name}}" age="{{age}}"></div>  <!--注：要添加{{}}  因为是基本类型-->
+<hr>
+<hr>
+
+<!--
+    = ,用于对象
+    在控制器作用域中访问
+-->
+user.name:<input type="text" ng-model="user.name"><br>
+user.age:<input type="text" ng-model="user.age"><br>
+user.name={{user.name}},user.age={{user.age}}
+<hr>
+<!--
+    在隔离作用域中访问
+-->
+<div second user="user"></div>      <!--注：不要添加{{}} 因为是对象-->
+<hr>
+<hr>
+
+
+<!--
+    & ， 用于方法
+    在控制作用域中访问
+-->
+<input type="button" ng-click="study()" value="按钮1">
+<hr>
+<!--
+    在隔离作用域中访问
+-->
+<div third click="study()"></div>
+</body>
+</html>
