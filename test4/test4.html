@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery/jquery.min.js"></script>
+    <script src="../js/angular/angular.js"></script>
+    <script src="js/test4.js"></script>
+    <title>自定义指令配置：link、controller</title>
+</head>
+<body ng-controller="DirectiveController">
+    <!-- 自定义指令，生成下拉列表(好像必须要以服务器端访问，不能直接打开html) -->
+    <!-- 根据opts属性中的值生成option(以逗号分隔) -->
+    <my-select otps="tom,jack,mike,alice"></my-select>
+
+
+    <!-- <select>
+        <option value="">tom</option>
+        <option value="">jack</option>
+        <option value="">mike</option>
+        <option value="">alice</option>
+    </select> -->
+</body>
+</html>

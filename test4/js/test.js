@@ -1,5 +1,10 @@
 var app = angular.module('MyApp',[]);
 
+app.controller('DirectiveController',['$scope',function ($scope) {
+    $scope.name = 'tom';
+    $scope.user = {'username': 'aaa','password':'123'};
+}]);
+
 /**
  * 选项： scope , 三种取值
  *  1. false
@@ -38,7 +43,3 @@ app.directive('second',[function () {
     };
 }]);
 
-app.controller('DirectiveController',['$scope',function ($scope) {
-    $scope.name = 'tom';
-    $scope.user = {'username': 'aaa','password':'123'};
-}]);

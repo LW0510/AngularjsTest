@@ -1,5 +1,17 @@
 var app = angular.module('MyApp',[]);
 
+
+app.controller('DirectiveController',['$scope',function ($scope) {
+    $scope.name = 'tom';
+    $scope.age = 21;
+    $scope.user = {name: 'jack',age:25};
+
+    $scope.study = function () {
+        console.log('welcome to itany');
+    }
+}]);
+
+
 /**
  * @ 用于字符串 （简单类型，如String,number）
  * 将父作用域中的特定属性绑定到隔离作用域中，单向绑定
@@ -70,13 +82,3 @@ app.directive('third',[function () {
     };
 }]);
 
-
-app.controller('DirectiveController',['$scope',function ($scope) {
-    $scope.name = 'tom';
-    $scope.age = 21;
-    $scope.user = {name: 'jack',age:25};
-
-    $scope.study = function () {
-        console.log('welcome to itany');
-    }
-}]);
