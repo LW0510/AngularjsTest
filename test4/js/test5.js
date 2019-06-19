@@ -34,7 +34,8 @@ app.directive('first',[function () {
 // 选项：require
 app.directive('second',[function(){
     return{
-        require: 'first',   //表示依赖first这个指令，注意：在同一级查找这个指令
+        // require: 'first',   //表示依赖first这个指令，注意：默认在同一级查找这个指令
+        require: '^first',      //加了^  表示可以在不同级查找
         restrict: 'A',
 
         link: function($scope,iElm,iAttrs,controller){
